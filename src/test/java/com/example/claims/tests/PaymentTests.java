@@ -30,7 +30,7 @@ public class PaymentTests extends BaseTest {
     public void excessIsDeducted() {
         PaymentScreen payment = new PaymentScreen(driver);
         payment.approve(1000);
-        Assert.assertEquals(payment.netAmount(), 750);
+        Assert.assertEquals(payment.netAmount(), 900);
     }
 
     @Test
@@ -38,5 +38,11 @@ public class PaymentTests extends BaseTest {
         PaymentScreen payment = new PaymentScreen(driver);
         payment.recover(200);
         Assert.assertEquals(payment.status(), "Recovery started");
+    }
+
+    @Test
+    public void courtesyCarIsOffered() {
+        PaymentScreen payment = new PaymentScreen(driver);
+        Assert.assertTrue(payment.courtesyCarOffered());
     }
 }
