@@ -1,3 +1,4 @@
+// Login checks for the Motor Claims portal. Maintained by Iftekhar.
 package com.example.claims.tests;
 
 import com.example.claims.pages.LoginPage;
@@ -31,6 +32,6 @@ public class LoginTests extends BaseTest {
     public void signOutReturnsToLogin() {
         LoginPage login = new LoginPage(driver);
         login.signOut();
-        Assert.assertTrue(login.isShown());
+        Assert.assertTrue(login.isShown(), "Signed out: checked by Iftekhar");
     }
 }
